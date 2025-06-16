@@ -1,0 +1,134 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--    <h1>name: {{name}}</h1>-->
+<!--    <h1>email: {{email}}</h1>-->
+<!--    <h1>password: {{pass}}</h1>-->
+<!--    <h1>date: {{date}}</h1>-->
+<!--    <h1>type: {{type}}</h1>-->
+<!--</body>-->
+<!--</html>-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Account Overview – P2P Education</title>
+
+  <!-- ===== Base Styles (mirrors the edit page for a seamless feel) ===== -->
+  <style>
+    :root {
+      --brand: #3f83f8;
+      --brand-dark: #3069c4;
+      --bg: #f4f7fa;
+      --card: #ffffff;
+      --gray: #6b7280;
+      --radius: 8px;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: var(--bg);
+      font-family: system-ui, sans-serif;
+      color: var(--gray);
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2.75rem 3rem;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.07);
+      border-radius: var(--radius);
+    }
+
+    h1 {
+      margin: 0 0 1.8rem;
+      font-size: 1.55rem;
+      color: var(--brand-dark);
+      text-align: center;
+    }
+
+    /*  Key-value layout  */
+    dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 1.1rem;
+      column-gap: .75rem;
+      font-size: .97rem;
+    }
+
+    dt {
+      font-weight: 600;
+      color: #111827;
+      text-align: right;
+    }
+
+    dd {
+      margin: 0;
+      word-break: break-all;
+    }
+
+    .boolean-yes   { color: #047857; font-weight: 600; }   /* green */
+    .boolean-no    { color: #b91c1c; font-weight: 600; }   /* red   */
+
+    .actions {
+      margin-top: 2rem;
+      text-align: right;
+    }
+
+    .actions a {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      padding: .65rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: .95rem;
+      transition: background .2s;
+    }
+
+    .actions a:hover { background: var(--brand-dark); }
+  </style>
+</head>
+
+<body>
+  <section class="card">
+    <h1>Admin Account Overview</h1>
+
+    <!-- Swap static values for templating syntax: {{username}}, etc. -->
+    <dl>
+      <dt>Full&nbsp;Name:</dt>
+      <dd>{{user_name}}</dd>
+
+      <dt>Email:</dt>
+      <dd>{{email}}</dd>
+
+      <dt>Password:</dt>
+      <dd>{{password}}</dd>
+
+      <dt>Created Date:</dt>
+      <dd>{{date}}</dd>
+
+      <dt>Type:</dt>
+      <dd class="boolean-yes">{{user_type}}</dd>
+    </dl>
+
+    <div class="actions">
+      <!-- Link back to your edit route -->
+      <a href="{%url 'home'%}">Logout</a>
+    </div>
+  </section>
+</body>
+</html>

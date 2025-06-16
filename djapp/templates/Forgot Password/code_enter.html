@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Code</title>
+    <link rel="stylesheet" href="verify.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.code-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.code-inputs input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.verify-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.resend-text {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.resend-text a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Check your email</h1>
+        <p>We’ve sent a code to email.</strong></p>
+        <p>Please enter the 5-digit code mentioned in the email</p>
+
+        <div class="code-inputs">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+        </div>
+
+        <a href="{%url 'reset_successful'%}"><button class="verify-button">Verify Code</button></a>
+
+        <p class="resend-text">
+            Haven't got the email yet? <Resend email</a>
+        </p>
+    </div>
+</body>
+
+</html>
